@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHEZ ELLE - Excellence en Formation Culinaire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #E63946;
+            --secondary: #457B9D;
+            --accent: #A8DADC;
+            --dark: #1D3557;
+            --light: #F1FAEE;
+            --gold: #FFD700;
+            --cream: #FFF8E8;
+            --chocolate: #3D2B1F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cream);
+            color: var(--chocolate);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.7)), 
+                        url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .logo-container {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 80px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .header-content {
+            max-width: 900px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            line-height: 1.1;
+        }
+
+        .devise {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 3rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+        }
+
+        .cta-button:hover {
+            background: #C1121F;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.6);
+        }
+
+        .cta-button.secondary {
+            background: var(--dark);
+            box-shadow: 0 4px 15px rgba(29, 53, 87, 0.4);
+        }
+
+        .cta-button.secondary:hover {
+            background: #14213D;
+            box-shadow: 0 8px 25px rgba(29, 53, 87, 0.6);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo i {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        /* Sections communes */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        /* Section À Propos */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.5);
+            z-index: 2;
+        }
+
+        .image-badge span:first-child {
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+
+        /* Section Programmes */
+        .programs-container {
+            background: url('https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover fixed;
+            padding: 5rem;
+            border-radius: 15px;
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        .programs-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(29, 53, 87, 0.9);
+            border-radius: 15px;
+        }
+
+        .programs-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            color: var(--dark);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .program-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .program-info {
+            padding: 2rem;
+        }
+
+        .program-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .program-duration {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .program-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .program-price span {
+            font-size: 1rem;
+            color: var(--dark);
+            font-weight: normal;
+        }
+
+        .program-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .program-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .program-features i {
+            color: var(--primary);
+        }
+
+        /* Section Galerie */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 280px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Section Témoignages */
+        .testimonials {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 6rem 5%;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .testimonial.active {
+            display: block;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .testimonial-text:before,
+        .testimonial-text:after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--gold);
+            opacity: 0.5;
+            position: absolute;
+        }
+
+        .testimonial-text:before {
+            top: -1.5rem;
+            left: -1rem;
+        }
+
+        .testimonial-text:after {
+            bottom: -3rem;
+            right: -1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .author-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .author-title {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .testimonial-dot.active {
+            background: var(--gold);
+            transform: scale(1.2);
+        }
+
+        /* Section Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            padding: 3rem;
+            background: var(--light);
+        }
+
+        .contact-info h3 {
+            color: var(--dark);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 0.3rem;
+        }
+
+        .info-content h4 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--dark);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            padding: 3rem;
+        }
+
+        .form-title {
+            color: var(--dark);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #C1121F;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+            background: var(--light);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .contact-method:hover {
+            background: var(--accent);
+        }
+
+        .contact-method i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .method-content h4 {
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .method-content p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 5rem 5% 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-logo i {
+            color: var(--gold);
+        }
+
+        .footer-about p {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .footer-title {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            font-size: 0.8rem;
+            color: var(--gold);
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .footer-contact i {
+            color: var(--gold);
+            margin-top: 0.3rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 3% auto;
+            padding: 3rem;
+            border-radius: 15px;
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+            animation: modalopen 0.5s;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes modalopen {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            color: #aaa;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close-btn:hover {
+            color: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            color: var(--dark);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .modal-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .modal-subtitle {
+            color: var(--primary);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--dark);
+            color: white;
+            font-weight: 500;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .modal-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .email-btn {
+            background: #D44638;
+            color: white;
+            box-shadow: 0 4px 15px rgba(212, 70, 56, 0.4);
+        }
+
+        .email-btn:hover {
+            background: #A52A2A;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 70, 56, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .about-content {
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .programs-container {
+                padding: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .devise {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: var(--dark);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-content {
+                padding: 0 1rem;
+            }
+            
+            .logo {
+                height: 60px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .modal-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <div class="logo-container">
+            <img src="logo.png" alt="CHEZ ELLE" class="logo">
+        </div>
+        
+        <div class="header-content">
+            <h1>CHEZ ELLE</h1>
+            <p class="devise">DISCIPLINE • TRAVAIL • EXCELLENCE</p>
+            <p>Centre d'Excellence en Formation Culinaire - 80% de pratique</p>
+            
+            <div class="cta-buttons">
+                <a href="#programs" class="cta-button">
+                    <i class="fas fa-utensils"></i> Nos Formations
+                </a>
+                <a href="#contact" class="cta-button secondary">
+                    <i class="fas fa-phone-alt"></i> Nous Contacter
+                </a>
+                <a href="#" class="cta-button" id="openInscription">
+                    <i class="fas fa-user-graduate"></i> S'inscrire Maintenant
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-down" id="scrollDown">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-utensils"></i>
+                CHEZ ELLE
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#programs">Formations</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#testimonials">Témoignages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>Notre Centre d'Excellence</h2>
+            <p>Découvrez CHEZ ELLE, le lieu où la passion rencontre l'expertise</p>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p>Situé au cœur du quartier Avotrou, derrière l'EPP Avotrou lot 703, CHEZ ELLE est bien plus qu'un simple centre de formation. C'est un creuset où se forgent les talents culinaires de demain.</p>
+                
+                <div class="highlight-box">
+                    <p>Notre approche pédagogique unique, axée sur la pratique (80% du temps), permet à nos étudiants d'acquérir des compétences concrètes et immédiatement applicables dans le monde professionnel.</p>
+                </div>
+                
+                <p>Depuis notre création, nous avons formé des centaines de professionnels qui excellent aujourd'hui dans les plus grands établissements hôteliers et restaurants du pays et au-delà.</p>
+                
+                <p>Notre équipe de formateurs chevronnés, dirigée par le Chef Julien VIDINHOUEDE NOUNAGNON, met tout son savoir-faire au service de votre réussite.</p>
+            </div>
+            
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Équipe de CHEZ ELLE">
+                <div class="image-badge">
+                    <span>80%</span>
+                    <span>Pratique</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs">
+        <div class="section-title">
+            <h2>Nos Programmes de Formation</h2>
+            <p>Des parcours adaptés à vos ambitions professionnelles</p>
+        </div>
+        
+        <div class="programs-container">
+            <div class="programs-content">
+                <h3 style="color: var(--gold); text-align: center; margin-bottom: 2rem;">Frais d'Inscription: 25,000 FCFA comprenant:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: center;">
+                    <div>
+                        <i class="fas fa-tshirt" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem;"></i>
+                        <p style="color: white;">Une Lacoste</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-vest" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem;"></i>
+                        <p style="color: white;">Un Tablier</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-hat-chef" style="font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem;"></i>
+                        <p style="color: white;">Une Toque</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="programs-grid">
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Formation en Pâtisserie">
+                    <div class="program-badge">Populaire</div>
+                </div>
+                <div class="program-info">
+                    <h3 class="program-title">CQM Pâtisserie/Cuisine/Serveur/Valet</h3>
+                    <div class="program-duration">
+                        <i class="far fa-clock"></i> Durée: 18 mois
+                    </div>
+                    <div class="program-price">300,000 FCFA</div>
+                    <ul class="program-features">
+                        <li><i class="fas fa-check"></i> Niveau requis: CM</li>
+                        <li><i class="fas fa-check"></i> Paiement en 4 trimestres</li>
+                        <li><i class="fas fa-check"></i> Diplôme reconnu</li>
+                        <li><i class="fas fa-check"></i> 80% de pratique</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center; padding: 0.8rem;">Plus d'informations</a>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Formation en Cuisine">
+                </div>
+                <div class="program-info">
+                    <h3 class="program-title">DQP Pâtisserie/Cuisine/Serveur/Valet/Réceptionniste</h3>
+                    <div class="program-duration">
+                        <i class="far fa-clock"></i> Durée: 2 ans
+                    </div>
+                    <div class="program-price">200,000 FCFA <span>/an</span></div>
+                    <ul class="program-features">
+                        <li><i class="fas fa-check"></i> Niveau requis: 3ème</li>
+                        <li><i class="fas fa-check"></i> Paiement en 3 mensualités</li>
+                        <li><i class="fas fa-check"></i> Formation complète</li>
+                        <li><i class="fas fa-check"></i> Stages professionnels</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center; padding: 0.8rem;">Plus d'informations</a>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Formation en Service">
+                </div>
+                <div class="program-info">
+                    <h3 class="program-title">CAP/HR</h3>
+                    <div class="program-duration">
+                        <i class="far fa-clock"></i> Durée: 3 ans
+                    </div>
+                    <div class="program-price">250,000 FCFA <span>/an</span></div>
+                    <ul class="program-features">
+                        <li><i class="fas fa-check"></i> Niveau requis: 3ème</li>
+                        <li><i class="fas fa-check"></i> Paiement en 3 mensualités</li>
+                        <li><i class="fas fa-check"></i> Diplôme d'État</li>
+                        <li><i class="fas fa-check"></i> Approche professionnelle</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center; padding: 0.8rem;">Plus d'informations</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="programs-grid" style="margin-top: 2rem;">
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Formation DT/HR">
+                </div>
+                <div class="program-info">
+                    <h3 class="program-title">DT/HR</h3>
+                    <div class="program-duration">
+                        <i class="far fa-clock"></i> Durée: 3 ans
+                    </div>
+                    <div class="program-price">250,000 FCFA <span>/an</span></div>
+                    <ul class="program-features">
+                        <li><i class="fas fa-check"></i> Niveau requis: BEPC/CAP</li>
+                        <li><i class="fas fa-check"></i> Paiement en 3 mensualités</li>
+                        <li><i class="fas fa-check"></i> Formation intensive</li>
+                        <li><i class="fas fa-check"></i> Débouchés garantis</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center; padding: 0.8rem;">Plus d'informations</a>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Formation DTM">
+                </div>
+                <div class="program-info">
+                    <h3 class="program-title">DTM Pâtisserie/Cuisine/Serveur/Valet/Réceptionniste</h3>
+                    <div class="program-duration">
+                        <i class="far fa-clock"></i> Durée: 3 ans
+                    </div>
+                    <div class="program-price">250,000 FCFA <span>/an</span></div>
+                    <ul class="program-features">
+                        <li><i class="fas fa-check"></i> Niveau requis: BEPC/CAP</li>
+                        <li><i class="fas fa-check"></i> Paiement en 3 mensualités</li>
+                        <li><i class="fas fa-check"></i> Programme avancé</li>
+                        <li><i class="fas fa-check"></i> Spécialisation possible</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center; padding: 0.8rem;">Plus d'informations</a>
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Formations Courtes">
+                    <div class="program-badge">Flexible</div>
+                </div>
+                <div class="program-info">
+                    <h3 class="program-title">Formations Courtes Durée</h3>
+                    <div class="program-duration">
+                        <i class="far fa-clock"></i> Durée: 3 mois à 1 an
+                    </div>
+                    <div class="program-price">À partir de 60,000 FCFA</div>
+                    <ul class="program-features">
+                        <li><i class="fas fa-check"></i> Attestation de fin de formation</li>
+                        <li><i class="fas fa-check"></i> Paiement en tranches</li>
+                        <li><i class="fas fa-check"></i> Horaires flexibles</li>
+                        <li><i class="fas fa-check"></i> Modules à la carte</li>
+                    </ul>
+                    <a href="#" class="cta-button" style="width: 100%; text-align: center; padding: 0.8rem;">Plus d'informations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="section-title">
+            <h2>Notre Galerie Créative</h2>
+            <p>Découvrez les réalisations de nos étudiants et formateurs</p>
+        </div>
+        
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gâteau de mariage">
+                <div class="gallery-overlay">
+                    <h3>Gâteau de Mariage</h3>
+                    <p>Réalisé par nos élèves en formation avancée</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Pâtisseries françaises">
+                <div class="gallery-overlay">
+                    <h3>Pâtisseries Françaises</h3>
+                    <p>Techniques traditionnelles enseignées</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cuisine gastronomique">
+                <div class="gallery-overlay">
+                    <h3>Cuisine Gastronomique</h3>
+                    <p>Plats réalisés en cours pratique</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Desserts créatifs">
+                <div class="gallery-overlay">
+                    <h3>Desserts Créatifs</h3>
+                    <p>Créations originales de nos élèves</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Service en salle">
+                <div class="gallery-overlay">
+                    <h3>Service en Salle</h3>
+                    <p>Formation complète en service</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cocktails et bar">
+                <div class="gallery-overlay">
+                    <h3>Formation Barman</h3>
+                    <p>Techniques de mixologie</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2 style="color: var(--gold);">Ils Parlent de Nous</h2>
+            <p style="color: white;">Découvrez ce que nos anciens élèves disent de leur expérience</p>
+        </div>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial active">
+                <p class="testimonial-text">"La formation à CHEZ ELLE a transformé ma passion pour la pâtisserie en véritable expertise. Les formateurs sont exceptionnels et les équipements professionnels. Aujourd'hui, je dirige ma propre pâtisserie grâce aux compétences acquises ici."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Alice D." class="author-avatar">
+                    <div>
+                        <p class="author-name">Alice D.</p>
+                        <p class="author-title">Diplômée en Pâtisserie - Propriétaire de "Délices d'Alice"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">"Après ma formation en cuisine, j'ai immédiatement trouvé un emploi dans un grand hôtel. L'accent mis sur la pratique fait toute la différence. Les recruteurs apprécient particulièrement que nous soyons opérationnels dès la fin de la formation."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jean K." class="author-avatar">
+                    <div>
+                        <p class="author-name">Jean K.</p>
+                        <p class="author-title">Diplômé en Cuisine - Chef de Partie à l'Hôtel Majestic</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">"Le centre CHEZ ELLE offre un environnement propice à l'apprentissage avec des professionnels compétents. La formation en service m'a donné confiance en moi et les techniques apprises me servent quotidiennement dans mon travail en restaurant gastronomique."</p>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fatou N." class="author-avatar">
+                    <div>
+                        <p class="author-name">Fatou N.</p>
+                        <p class="author-title">Diplômée en Service - Maître d'Hôtel au "Savoureux"</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <div class="testimonial-dot active" data-index="0"></div>
+                <div class="testimonial-dot" data-index="1"></div>
+                <div class="testimonial-dot" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2>Contactez CHEZ ELLE</h2>
+            <p>Nous sommes à votre écoute pour toute information ou inscription</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Informations de Contact</h3>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Adresse</h4>
+                        <p>Quartier Avotrou, derrière l'EPP Avotrou lot 703</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Téléphone</h4>
+                        <p>01 96 29 34 00 / 01 44 46 04 99</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Email</h4>
+                        <p>julesvidinhouede9@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>Heures d'Ouverture</h4>
+                        <p>Lundi - Vendredi: 8h00 - 18h00<br>Samedi: 9h00 - 13h00</p>
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 3rem;">Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3 class="form-title">Envoyez-nous un Message</h3>
+                
+                <div class="contact-methods">
+                    <div class="contact-method" id="whatsappBtn">
+                        <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                        <div class="method-content">
+                            <h4>Chattez avec nous sur WhatsApp</h4>
+                            <p>Réponse rapide garantie</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method" id="emailBtn">
+                        <i class="fas fa-envelope" style="color: #D44638;"></i>
+                        <div class="method-content">
+                            <h4>Envoyez-nous un email</h4>
+                            <p>julesvidinhouede9@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin: 1.5rem 0; font-weight: 500; color: var(--dark);">OU</p>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Votre nom complet" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" id="phone" placeholder="Votre numéro de téléphone" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="subject">
+                            <option value="">Sujet de votre message</option>
+                            <option value="information">Demande d'information</option>
+                            <option value="inscription">Demande d'inscription</option>
+                            <option value="other">Autre demande</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <button type="button" id="sendMessageBtn" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Envoyer le Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-utensils"></i>
+                    CHEZ ELLE
+                </div>
+                <p>Centre d'Excellence en Formation Culinaire situé à Avotrou, derrière l'EPP Avotrou lot 703. Nous formons les professionnels de la pâtisserie, cuisine et services hôteliers de demain.</p>
+                <p>Notre devise: <strong>Discipline, Travail, Excellence</strong></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Liens Rapides</h3>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> À Propos</a></li>
+                    <li><a href="#programs"><i class="fas fa-chevron-right"></i> Nos Formations</a></li>
+                    <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Galerie</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Nos Formations</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Pâtisserie</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Cuisine</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Service en Salle</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Barman</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Réceptionniste</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Contact</h3>
+                <div class="footer-contact">
+                    <p><i class="fas fa-map-marker-alt"></i> Quartier Avotrou, derrière l'EPP Avotrou lot 703</p>
+                    <p><i class="fas fa-phone-alt"></i> 01 96 29 34 00 / 01 44 46 04 99</p>
+                    <p><i class="fab fa-whatsapp"></i> +229 61 67 08 43</p>
+                    <p><i class="fas fa-envelope"></i> julesvidinhouede9@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 CHEZ ELLE - Centre de Formation en Pâtisserie & Cuisine. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Inscription -->
+    <div id="inscriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Inscription aux Formations</h2>
+            
+            <div class="modal-subtitle">Pièces à fournir :</div>
+            <ul style="margin-bottom: 2rem;">
+                <li>Acte de naissance (copie certifiée)</li>
+                <li>Copie certifiée du dernier diplôme obtenu</li>
+                <li>Demande manuscrite précisant la filière et l'option choisie</li>
+                <li>2 photos d'identité récentes (4x4)</li>
+            </ul>
+            
+            <div class="modal-subtitle">Frais d'inscription : 25,000 FCFA comprenant :</div>
+            <ul style="margin-bottom: 2rem;">
+                <li>Une lacoste aux couleurs de l'école</li>
+                <li>Un tablier professionnel</li>
+                <li>Une toque de chef</li>
+            </ul>
+            
+            <div class="modal-subtitle">Prix des travaux pratiques : 25,000 FCFA</div>
+            
+            <div class="modal-subtitle">Options de formation diplômantes :</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Niveau</th>
+                        <th>Durée</th>
+                        <th>Frais (FCFA)</th>
+                        <th>Modalité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CQM Patisserie/cuisine/serveur/Valet</td>
+                        <td>CM</td>
+                        <td>18 mois</td>
+                        <td>300,000</td>
+                        <td>4 Trimestre</td>
+                    </tr>
+                    <tr>
+                        <td>DQP Patisserie/cuisine/serveur/Valet/Réceptioniste</td>
+                        <td>3ème</td>
+                        <td>2 ans</td>
+                        <td>200,000/an</td>
+                        <td>3 Mensualités</td>
+                    </tr>
+                    <tr>
+                        <td>CAP/HR</td>
+                        <td>3ème</td>
+                        <td>3 ans</td>
+                        <td>250,000/an</td>
+                        <td>3 mensualités</td>
+                    </tr>
+                    <tr>
+                        <td>DT/HR</td>
+                        <td>BEPC/CAP</td>
+                        <td>3 ans</td>
+                        <td>250,000/an</td>
+                        <td>3 Mensualités</td>
+                    </tr>
+                    <tr>
+                        <td>DTM/ Patisserie/cuisine/serveur/Vale/Réceptioniste</td>
+                        <td>BEPC/CAP</td>
+                        <td>3 ans</td>
+                        <td>250,000/an</td>
+                        <td>3 Mensualités</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="modal-subtitle">Formations courtes durée :</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Diplôme obtenue</th>
+                        <th>Durée de formation</th>
+                        <th>Frais de formation</th>
+                        <th>Modalités</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Attestation de fin de formation</td>
+                        <td>3 Mois</td>
+                        <td>60,000</td>
+                        <td>1 tranche</td>
+                    </tr>
+                    <tr>
+                        <td>Attestation de fin de formation</td>
+                        <td>6 Mois</td>
+                        <td>100,000</td>
+                        <td>2 tranches</td>
+                    </tr>
+                    <tr>
+                        <td>Attestation de fin de formation</td>
+                        <td>1 AN</td>
+                        <td>150,000</td>
+                        <td>3 tranches</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p style="margin-top: 2rem; font-weight: 500; text-align: center;">
+                <i class="fas fa-info-circle" style="color: var(--primary);"></i> Les frais de formation peuvent être payés intégralement en une seule tranche ou selon les modalités indiquées.
+            </p>
+            
+            <div class="modal-buttons">
+                <a href="https://wa.me/22961670843" class="modal-button whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Envoyer sur WhatsApp
+                </a>
+                <a href="mailto:julesvidinhouede9@gmail.com" class="modal-button email-btn">
+                    <i class="fas fa-envelope"></i> Envoyer par Email
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Menu Mobile
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Fermer le menu mobile si ouvert
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Scroll Down Button
+        document.getElementById('scrollDown').addEventListener('click', () => {
+            window.scrollTo({
+                top: document.getElementById('about').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+
+        // Témoignages Slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        
+        function showTestimonial(index) {
+            testimonials.forEach(testimonial => {
+                testimonial.classList.remove('active');
+            });
+            
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+        
+        function nextTestimonial() {
+            let nextIndex = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(nextIndex);
+        }
+        
+        // Changement automatique toutes les 5 secondes
+        let testimonialInterval = setInterval(nextTestimonial, 5000);
+        
+        // Contrôle manuel avec les dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                clearInterval(testimonialInterval);
+                showTestimonial(parseInt(this.getAttribute('data-index')));
+                testimonialInterval = setInterval(nextTestimonial, 5000);
+            });
+        });
+
+        // Modal Inscription
+        const modal = document.getElementById('inscriptionModal');
+        const openModalBtn = document.getElementById('openInscription');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        openModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Fonctionnalités de Contact
+        document.getElementById('whatsappBtn').addEventListener('click', function() {
+            const phoneNumber = '22961670843';
+            const message = "Bonjour CHEZ ELLE, je suis intéressé par vos formations. Pouvez-vous me renseigner ?";
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        document.getElementById('emailBtn').addEventListener('click', function() {
+            const email = 'julesvidinhouede9@gmail.com';
+            const subject = "Demande d'information - CHEZ ELLE";
+            const body = "Bonjour,\n\nJe suis intéressé par vos formations. Pourriez-vous m'envoyer plus d'informations ?\n\nCordialement,";
+            const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoUrl;
+        });
+
+        document.getElementById('sendMessageBtn').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !phone || !message) {
+                alert('Veuillez remplir tous les champs obligatoires');
+                return;
+            }
+            
+            const fullMessage = `Nouveau message de *${name}* (${phone})%0A%0A*Sujet:* ${subject || 'Non spécifié'}%0A%0A*Message:*%0A${message}`;
+            
+            // Envoi par WhatsApp
+            const phoneNumber = '22961670843';
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${fullMessage}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Réinitialisation du formulaire
+            document.getElementById('contactForm').reset();
+        });
+
+        // Animation au défilement
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.about-content, .program-card, .gallery-item, .contact-container');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Initialiser les éléments animés
+        document.querySelectorAll('.about-content, .program-card, .gallery-item, .contact-container').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
